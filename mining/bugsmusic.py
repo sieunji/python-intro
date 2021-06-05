@@ -13,8 +13,8 @@ class Bugmusic(object):
     def get_ranking(self):
         soup = BeautifulSoup(self.url,'lxml')
         ls1 = soup.find_all(name='p',attrs={"class":"title"})
-        for i in ls1:
-            print(i.find("a").text)
+        for idx,title in enumerate(ls1): #index값을 가져오게 하는 함수: enumerate
+            print(f'{idx+1}위 {title.find("a").text}')
 
     @staticmethod
     def main():
