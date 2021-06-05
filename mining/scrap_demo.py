@@ -2,12 +2,17 @@ from bs4 import BeautifulSoup
 
 if __name__ == '__main__':
     html ='''
-    <th scope="row">
-        <p class="title" adult_yn="N">
-        <a href="javascript:;" adultcheckval="1" onclick="bugs.wiselog.area('list_tr_09_chart');bugs.music.listen('32238640',true);
-        " title="Butter" aria-label="새창">Butter</a>
-        </p>
-    </th>
+   <html><head><title>The Dormouse's story</title></head>
+    <body>
+    <p class="title"><b>The Dormouse's story</b></p>
+    
+    <p class="story">Once upon a time there were three little sisters; and their names were
+    <a href="http://example.com/elsie" class="sister" id="link1">Elsie</a>,
+    <a href="http://example.com/lacie" class="sister" id="link2">Lacie</a> and
+    <a href="http://example.com/tillie" class="sister" id="link3">Tillie</a>;
+    and they lived at the bottom of a well.</p>
+    
+    <p class="story">...</p>>
     '''
     soup = BeautifulSoup(html,'html.parser')
     print(soup.title.string)
